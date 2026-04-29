@@ -1,0 +1,29 @@
+# OpenSSH client config para OpenClaw_Servidor
+# Copie este conteúdo para ~/.ssh/config no cliente.
+# Ajuste IdentityFile se a chave estiver em outro caminho.
+
+Host openclaw
+    HostName 163.176.183.193
+    User ubuntu
+    IdentityFile ~/.ssh/oracle-vm.key
+    IdentitiesOnly yes
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+
+Host openclaw-admin
+    HostName 163.176.183.193
+    User ubuntu
+    IdentityFile ~/.ssh/oracle-vm.key
+    IdentitiesOnly yes
+    RequestTTY force
+    RemoteCommand sudo -i
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+
+Host openclaw-recovery
+    HostName 163.176.183.193
+    User ubuntu
+    IdentityFile ~/.ssh/openclaw-servidor-recovery
+    IdentitiesOnly yes
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
